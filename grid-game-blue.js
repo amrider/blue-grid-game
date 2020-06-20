@@ -10,7 +10,7 @@ function setup() {
   noLoop();
   frameRate(20);
   rectMode(CENTER);
-  background(0);//moving this into the loop makes each test
+  background(0, 0, 255);//moving this into the loop makes each test
   //disappear each time effecively resetting the field, but also
   //causing the automapping to disappear... not sure which way to go here
   fill(255)
@@ -30,8 +30,8 @@ function setup() {
 function draw()
 {
 
-fill(255)//for the grid overlay
-stroke(255)//for the grid overlay
+fill(255, 255, 0)//for the grid overlay
+stroke(255, 255, 0)//for the grid overlay
 strokeWeight(0.5)//for the grid overlay
 ellipse(width/2, height/2, 5, 5)//for the grid overlay
 //line(width/2, 0, width/2, height)//for the grid overlay
@@ -43,10 +43,10 @@ for(x=0;x<=width;x=x+20){//spacing of lines e.g. x=x+20
 }}
 
   noStroke()
-  fill(0+fillx)//black and white target here can
+  //fill(0+fillx)//black and white target here can
   //change over time
 
-  //fill(0+fillx, 0+fillx, 255-fillx)//color of the target is here
+  fill(0+fillx, 0+fillx, 255-fillx)//color of the target is here
   //and changes with time
   let step = frameCount % 20;
   let angle = map(step, 0, 20, 0, TWO_PI);
@@ -90,7 +90,6 @@ function spawnNew(){
 function stopGame(){
   noLoop()
 }
-
 
 //function redDot(){
   //function draw(){
